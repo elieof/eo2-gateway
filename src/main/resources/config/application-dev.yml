@@ -86,6 +86,9 @@ spring:
       properties:
         path:
           home: target/elasticsearch
+        # See https://github.com/jhipster/generator-jhipster/issues/10302
+        node:
+          max_local_storage_nodes: 2
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
@@ -143,8 +146,8 @@ jhipster:
     max-age: 1800
   security:
     client-authorization:
-      access-token-uri: http://eo2-uaa/oauth/token
-      token-service-id: eo2-uaa
+      access-token-uri: http://eo2uaa/oauth/token
+      token-service-id: eo2uaa
       client-id: internal
       client-secret: internal
   mail: # specific JHipster mail property, for standard properties see MailProperties
@@ -164,15 +167,15 @@ jhipster:
     retention-period: 30 # Number of days before audit events are deleted.
 oauth2:
   signature-verification:
-    public-key-endpoint-uri: http://eo2-uaa/oauth/token_key
+    public-key-endpoint-uri: http://eo2uaa/oauth/token_key
     #ttl for public keys to verify JWT tokens (in ms)
     ttl: 3600000
     #max. rate at which public keys will be fetched (in ms)
     public-key-refresh-rate-limit: 10000
   web-client-configuration:
     #keep in sync with UAA configuration
-    client-id: web_app
-    secret: changeit
+    client-id: eo2_uua_web_app
+    secret: eo2_uua_web_password
     # Controls session expiration due to inactivity (ignored for remember-me).
     # Negative values disable session inactivity expiration.
     session-timeout-in-seconds: 1800

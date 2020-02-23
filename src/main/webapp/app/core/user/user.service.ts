@@ -8,9 +8,9 @@ import { IUser } from './user.model';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  public resourceUrl = SERVER_API_URL + 'services/eo2-uaa/api/users';
+  public resourceUrl = SERVER_API_URL + 'services/eo2uaa/api/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   create(user: IUser): Observable<IUser> {
     return this.http.post<IUser>(this.resourceUrl, user);
@@ -34,6 +34,6 @@ export class UserService {
   }
 
   authorities(): Observable<string[]> {
-    return this.http.get<string[]>(SERVER_API_URL + 'services/eo2-uaa/api/users/authorities');
+    return this.http.get<string[]>(SERVER_API_URL + 'services/eo2uaa/api/users/authorities');
   }
 }

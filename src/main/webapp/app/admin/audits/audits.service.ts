@@ -13,12 +13,12 @@ export interface AuditsQuery extends Pagination {
 
 @Injectable({ providedIn: 'root' })
 export class AuditsService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   query(req: AuditsQuery): Observable<HttpResponse<Audit[]>> {
     const params: HttpParams = createRequestOption(req);
 
-    const requestURL = SERVER_API_URL + 'services/eo2-uaa/management/audits';
+    const requestURL = SERVER_API_URL + 'services/eo2uaa/management/audits';
 
     return this.http.get<Audit[]>(requestURL, {
       params,

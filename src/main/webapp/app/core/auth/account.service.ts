@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { JhiLanguageService } from 'ng-jhipster';
 import { SessionStorageService } from 'ngx-webstorage';
-import { Observable, ReplaySubject, of } from 'rxjs';
-import { shareReplay, tap, catchError } from 'rxjs/operators';
+import { Observable, of, ReplaySubject } from 'rxjs';
+import { catchError, shareReplay, tap } from 'rxjs/operators';
 import { StateStorageService } from 'app/core/auth/state-storage.service';
 
 import { SERVER_API_URL } from 'app/app.constants';
@@ -27,7 +27,7 @@ export class AccountService {
   ) {}
 
   save(account: Account): Observable<{}> {
-    return this.http.post(SERVER_API_URL + 'services/eo2-uaa/api/account', account);
+    return this.http.post(SERVER_API_URL + 'services/eo2uaa/api/account', account);
   }
 
   authenticate(identity: Account | null): void {
@@ -89,7 +89,7 @@ export class AccountService {
   }
 
   private fetch(): Observable<Account> {
-    return this.http.get<Account>(SERVER_API_URL + 'services/eo2-uaa/api/account');
+    return this.http.get<Account>(SERVER_API_URL + 'services/eo2uaa/api/account');
   }
 
   private navigateToStoredUrl(): void {

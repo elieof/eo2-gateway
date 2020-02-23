@@ -6,9 +6,9 @@ import { SERVER_API_URL } from 'app/app.constants';
 
 @Injectable({ providedIn: 'root' })
 export class PasswordResetInitService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   save(mail: string): Observable<{}> {
-    return this.http.post(SERVER_API_URL + 'services/eo2-uaa/api/account/reset-password/init', mail);
+    return this.http.post(SERVER_API_URL + 'services/eo2uaa/api/account/reset-password/init', mail);
   }
 }

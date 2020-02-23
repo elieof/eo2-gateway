@@ -9,6 +9,9 @@ export class PasswordService {
   constructor(private http: HttpClient) {}
 
   save(newPassword: string, currentPassword: string): Observable<{}> {
-    return this.http.post(SERVER_API_URL + 'services/eo2-uaa/api/account/change-password', { currentPassword, newPassword });
+    return this.http.post(SERVER_API_URL + 'services/eo2uaa/api/account/change-password', {
+      currentPassword,
+      newPassword
+    });
   }
 }

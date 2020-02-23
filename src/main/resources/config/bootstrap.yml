@@ -5,7 +5,7 @@
 
 jhipster:
   registry:
-    password: admin
+    password: eo2-jhr-admin
 
 spring:
   application:
