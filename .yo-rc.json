@@ -4,7 +4,7 @@
       "packageName": "com.fahkap.eo2.gateway",
       "nativeLanguage": "en"
     },
-    "jhipsterVersion": "6.7.1",
+    "jhipsterVersion": "6.8.0",
     "applicationType": "gateway",
     "baseName": "eo2Gateway",
     "packageName": "com.fahkap.eo2.gateway",
