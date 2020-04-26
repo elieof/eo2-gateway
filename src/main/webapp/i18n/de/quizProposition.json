@@ -1,0 +1,30 @@
+{
+  "eo2GatewayApp": {
+    "quizProposition": {
+      "home": {
+        "title": "Propositions",
+        "createLabel": "Proposition erstellen",
+        "createOrEditLabel": "Proposition erstellen oder bearbeiten",
+        "search": "Suche nach Proposition",
+        "notFound": "No Propositions found"
+      },
+      "delete": {
+        "question": "Soll Proposition {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Proposition"
+      },
+      "statement": "Statement",
+      "valid": "Valid",
+      "explanation": "Explanation",
+      "question": "Question"
+    }
+  },
+  "quizApp": {
+    "quizProposition": {
+      "created": "Proposition erstellt mit ID {{ param }}",
+      "updated": "Proposition aktualisiert mit ID {{ param }}",
+      "deleted": "Proposition gelöscht mit ID {{ param }}"
+    }
+  }
+}

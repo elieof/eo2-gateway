@@ -1,0 +1,29 @@
+{
+  "eo2GatewayApp": {
+    "quizQResult": {
+      "home": {
+        "title": "Q Results",
+        "createLabel": "Q Result erstellen",
+        "createOrEditLabel": "Q Result erstellen oder bearbeiten",
+        "search": "Suche nach Q Result",
+        "notFound": "No Q Results found"
+      },
+      "delete": {
+        "question": "Soll Q Result {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Q Result"
+      },
+      "username": "Username",
+      "valid": "Valid",
+      "question": "Question"
+    }
+  },
+  "quizApp": {
+    "quizQResult": {
+      "created": "Q Result erstellt mit ID {{ param }}",
+      "updated": "Q Result aktualisiert mit ID {{ param }}",
+      "deleted": "Q Result gelöscht mit ID {{ param }}"
+    }
+  }
+}

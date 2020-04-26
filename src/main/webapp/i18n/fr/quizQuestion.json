@@ -1,0 +1,31 @@
+{
+  "eo2GatewayApp": {
+    "quizQuestion": {
+      "home": {
+        "title": "Questions",
+        "createLabel": "Créer un nouveau Question",
+        "createOrEditLabel": "Créer ou éditer un Question",
+        "search": "Recherche pour Question",
+        "notFound": "Aucun Question trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Question {{ id }} ?"
+      },
+      "detail": {
+        "title": "Question"
+      },
+      "statement": "Statement",
+      "level": "Level",
+      "proposition": "Proposition",
+      "topic": "Topic",
+      "quiz": "Quiz"
+    }
+  },
+  "quizApp": {
+    "quizQuestion": {
+      "created": "Un nouveau Question a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Question avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Question avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

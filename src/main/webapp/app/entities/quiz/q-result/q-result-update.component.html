@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form (ngSubmit)="save()" [formGroup]="editForm" name="editForm" novalidate role="form">
+            <h2 id="jhi-q-result-heading" jhiTranslate="eo2GatewayApp.quizQResult.home.createOrEditLabel">Create or edit
+                a Q Result</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div [hidden]="!editForm.get('id')!.value" class="form-group">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input class="form-control" formControlName="id" id="id" name="id" readonly type="text"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_username"
+                           jhiTranslate="eo2GatewayApp.quizQResult.username">Username</label>
+                    <input class="form-control" formControlName="username" id="field_username" name="username"
+                           type="text"/>
+                    <div *ngIf="editForm.get('username')!.invalid && (editForm.get('username')!.dirty || editForm.get('username')!.touched)">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_valid" jhiTranslate="eo2GatewayApp.quizQResult.valid">Valid</label>
+                    <input class="form-control" formControlName="valid" id="field_valid" name="valid"
+                           type="checkbox"/>
+                    <div *ngIf="editForm.get('valid')!.invalid && (editForm.get('valid')!.dirty || editForm.get('valid')!.touched)">
+                        <small *ngIf="editForm.get('valid')?.errors?.required"
+                               class="form-text text-danger" jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_question"
+                           jhiTranslate="eo2GatewayApp.quizQResult.question">Question</label>
+                    <select class="form-control" formControlName="questionId" id="field_question" name="question">
+                        <option [ngValue]="null"></option>
+                        <option *ngFor="let questionOption of questions; trackBy: trackById"
+                                [ngValue]="questionOption.id">{{ questionOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button (click)="previousState()" class="btn btn-secondary" id="cancel-save" type="button">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button [disabled]="editForm.invalid || isSaving" class="btn btn-primary" id="save-entity"
+                        type="submit">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

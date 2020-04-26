@@ -1,0 +1,31 @@
+{
+  "eo2GatewayApp": {
+    "quizTopic": {
+      "home": {
+        "title": "Topics",
+        "createLabel": "Topic erstellen",
+        "createOrEditLabel": "Topic erstellen oder bearbeiten",
+        "search": "Suche nach Topic",
+        "notFound": "No Topics found"
+      },
+      "delete": {
+        "question": "Soll Topic {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Topic"
+      },
+      "name": "Name",
+      "createdBy": "Created by",
+      "createdDate": "Created date",
+      "lastModifiedBy": "Last modified by",
+      "lastModifiedDate": "last modified date"
+    }
+  },
+  "quizApp": {
+    "quizTopic": {
+      "created": "Topic erstellt mit ID {{ param }}",
+      "updated": "Topic aktualisiert mit ID {{ param }}",
+      "deleted": "Topic gelöscht mit ID {{ param }}"
+    }
+  }
+}

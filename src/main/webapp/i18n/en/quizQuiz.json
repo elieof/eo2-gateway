@@ -1,0 +1,33 @@
+{
+  "eo2GatewayApp": {
+    "quizQuiz": {
+      "home": {
+        "title": "Quizzes",
+        "createLabel": "Create a new Quiz",
+        "createOrEditLabel": "Create or edit a Quiz",
+        "search": "Search for Quiz",
+        "notFound": "No Quizzes found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Quiz {{ id }}?"
+      },
+      "detail": {
+        "title": "Quiz"
+      },
+      "name": "Name",
+      "description": "Description",
+      "question": "Question",
+      "createdBy": "Created by",
+      "createdDate": "Created date",
+      "lastModifiedBy": "Last modified by",
+      "lastModifiedDate": "last modified date"
+    }
+  },
+  "quizApp": {
+    "quizQuiz": {
+      "created": "A new Quiz is created with identifier {{ param }}",
+      "updated": "A Quiz is updated with identifier {{ param }}",
+      "deleted": "A Quiz is deleted with identifier {{ param }}"
+    }
+  }
+}

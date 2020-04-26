@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form (ngSubmit)="save()" [formGroup]="editForm" name="editForm" novalidate role="form">
+            <h2 id="jhi-proposition-heading" jhiTranslate="eo2GatewayApp.quizProposition.home.createOrEditLabel">Create
+                or edit a Proposition</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div [hidden]="!editForm.get('id')!.value" class="form-group">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input class="form-control" formControlName="id" id="id" name="id" readonly type="text"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_statement"
+                           jhiTranslate="eo2GatewayApp.quizProposition.statement">Statement</label>
+                    <input class="form-control" formControlName="statement" id="field_statement" name="statement"
+                           type="text"/>
+                    <div *ngIf="editForm.get('statement')!.invalid && (editForm.get('statement')!.dirty || editForm.get('statement')!.touched)">
+                        <small *ngIf="editForm.get('statement')?.errors?.required"
+                               class="form-text text-danger" jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                        <small *ngIf="editForm.get('statement')?.errors?.minlength"
+                               [translateValues]="{ min: 2 }" class="form-text text-danger"
+                               jhiTranslate="entity.validation.minlength">
+                            This field is required to be at least 2 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_valid"
+                           jhiTranslate="eo2GatewayApp.quizProposition.valid">Valid</label>
+                    <input class="form-control" formControlName="valid" id="field_valid" name="valid"
+                           type="checkbox"/>
+                    <div *ngIf="editForm.get('valid')!.invalid && (editForm.get('valid')!.dirty || editForm.get('valid')!.touched)">
+                        <small *ngIf="editForm.get('valid')?.errors?.required"
+                               class="form-text text-danger" jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_explanation"
+                           jhiTranslate="eo2GatewayApp.quizProposition.explanation">Explanation</label>
+                    <input class="form-control" formControlName="explanation" id="field_explanation" name="explanation"
+                           type="text"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_question"
+                           jhiTranslate="eo2GatewayApp.quizProposition.question">Question</label>
+                    <select class="form-control" formControlName="questionId" id="field_question" name="question">
+                        <option [ngValue]="null"></option>
+                        <option *ngFor="let questionOption of questions; trackBy: trackById"
+                                [ngValue]="questionOption.id">{{ questionOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button (click)="previousState()" class="btn btn-secondary" id="cancel-save" type="button">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button [disabled]="editForm.invalid || isSaving" class="btn btn-primary" id="save-entity"
+                        type="submit">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

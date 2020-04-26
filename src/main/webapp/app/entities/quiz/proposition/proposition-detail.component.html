@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proposition">
+            <h2><span jhiTranslate="eo2GatewayApp.quizProposition.detail.title">Proposition</span> {{ proposition.id }}
+            </h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="eo2GatewayApp.quizProposition.statement">Statement</span></dt>
+                <dd>
+                    <span>{{ proposition.statement }}</span>
+                </dd>
+                <dt><span jhiTranslate="eo2GatewayApp.quizProposition.valid">Valid</span></dt>
+                <dd>
+                    <span>{{ proposition.valid }}</span>
+                </dd>
+                <dt><span jhiTranslate="eo2GatewayApp.quizProposition.explanation">Explanation</span></dt>
+                <dd>
+                    <span>{{ proposition.explanation }}</span>
+                </dd>
+                <dt><span jhiTranslate="eo2GatewayApp.quizProposition.question">Question</span></dt>
+                <dd>
+                    <div *ngIf="proposition.questionId">
+                        <a [routerLink]="['/question', proposition.questionId, 'view']">{{ proposition.questionId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button (click)="previousState()"
+                    class="btn btn-info"
+                    type="submit">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button [routerLink]="['/proposition', proposition.id, 'edit']"
+                    class="btn btn-primary"
+                    type="button">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
