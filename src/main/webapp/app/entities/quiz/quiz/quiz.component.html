@@ -62,10 +62,15 @@
                     <fa-icon icon="sort"></fa-icon>
                 </th>
                 <th jhiSortBy="lastModifiedDate" scope="col"><span
-                        jhiTranslate="eo2GatewayApp.quizQuiz.lastModifiedDate">LastModifiedDate</span>
+                    jhiTranslate="eo2GatewayApp.quizQuiz.lastModifiedDate">LastModifiedDate</span>
                     <fa-icon icon="sort"></fa-icon>
                 </th>
-                <th scope="col"></th>
+                <th scope="col">
+                    <button (click)="loadPage()" class="btn btn-primary">
+                        <fa-icon icon="sync"></fa-icon>
+                        <span jhiTranslate="gateway.refresh.button">Refresh</span>
+                    </button>
+                </th>
             </tr>
             </thead>
             <tbody>

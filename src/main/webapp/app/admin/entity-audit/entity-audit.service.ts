@@ -9,13 +9,13 @@ export class EntityAuditService {
   constructor(private http: HttpClient) {}
 
   getAllAudited(): Observable<string[]> {
-    return this.http.get<string[]>('api/audits/entity/all');
+    return this.http.get<string[]>('services/eooquiz/api/audits/entity/all');
   }
 
   findByEntity(entity: string, limit: number): Observable<HttpResponse<EntityAuditEvent[]>> {
     const params: HttpParams = new HttpParams().append('entityType', entity).append('limit', limit.toString());
 
-    return this.http.get<EntityAuditEvent[]>('api/audits/entity/changes', {
+    return this.http.get<EntityAuditEvent[]>('services/eooquiz/api/audits/entity/changes', {
       params,
       observe: 'response'
     });
@@ -27,7 +27,7 @@ export class EntityAuditService {
       .append('entityId', entityId)
       .append('commitVersion', commitVersion.toString());
 
-    return this.http.get<EntityAuditEvent>('api/audits/entity/changes/version/previous', {
+    return this.http.get<EntityAuditEvent>('services/eooquiz/api/audits/entity/changes/version/previous', {
       params,
       observe: 'response'
     });
